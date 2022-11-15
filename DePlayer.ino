@@ -34,9 +34,6 @@ struct SwInfo {
 
 #define DF_WAIT 400 // DFPlayerにコマンド発行後の待ち時間
 
-#define FOLDER_MAX 99
-uint8_t songCount[ FOLDER_MAX ];    // 各フォルダーの曲数
-
 uint8_t folderNo;   // フォルダー番号
 uint8_t songNo;     // 曲番号
 bool repeat;        // リピート処理
@@ -169,7 +166,7 @@ void playPreviousFolder()
   if ( folderNo > 1 ){
     // 前のフォルダーの先頭の曲を再生
     folderNo --;
-    songNo;
+    songNo = 1;
     playSong( folderNo, songNo );
   }
 }
